@@ -19,4 +19,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('getImages', 'App\Http\Controllers\ImageController@getImages');
-Route::get('send-mail', 'App\Http\Controllers\MailController@sendAdminEmail');
+Route::get('sendAdminMail', 'App\Http\Controllers\MailController@sendAdminEmail');
