@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Http;
+use Illuminate\Http\Request;
 
 class ImageController extends Controller
 {
@@ -12,6 +13,17 @@ class ImageController extends Controller
 
         $jsonData = $response->json();
           
+        return $jsonData;
+    }
+
+    public function getImage(Request $request)
+    {
+        $id = $request->id;
+        
+        $response = Http::get('http://astrobin.com/api/v1/imagerevision/' . $id . '?api_key=04136fb24aaeb2c8bdcb1d165aef5eaf9bd24bd6&api_secret=2a7c29d6f2cf9846df8e69ae2b65c59406535533&format=json');
+
+        $jsonData = $response->json();
+
         return $jsonData;
     }
 }
