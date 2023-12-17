@@ -27,9 +27,9 @@ class ImageController extends Controller
                     $revision_jsonData['published'] = $image['published'];
                     
                     $images[] = $revision_jsonData;
+                } else {
+                    $images[] = $image;
                 }
-
-                $images[] = $image;
             }
         }
           
